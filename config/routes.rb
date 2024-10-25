@@ -12,5 +12,14 @@ Rails.application.routes.draw do
         post :variance
       end
     end
+
+    resources :data_access, only: [] do
+      collection do
+        post 'cell_value'
+        post 'column_values'
+        post 'row_values'
+        post 'find_value'
+      end
+    end
   end
 end
